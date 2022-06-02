@@ -17,11 +17,12 @@ $res = $conn->query($sql) or die("erro");
 //Indice do banco:
     $html .= "<table border='1'>";
     $html .= "<tr>";
-    $html .= "<th>"."#"."</th>";
-    $html .=  "<th>"."Nome"."</th>";
-    $html .=  "<th>"."Departamento"."</th>";
-    $html .=  "<th>"."Função"."</th>";
-    $html .=  "<th>"."Salário"."</th>";
+    $html .= "<th>#</th>";
+    $html .=  "<th>Nome</th>";
+    $html .=  "<th>Departamento</th>";
+    $html .=  "<th>Função</th>";
+    $html .=  "<th>Salário</th>";
+    $html .=  "<th>Foto</th>";
     $html .=  "</tr>";
     //loop responsavel pelos dados no banco
     while($row = $res->fetch_object()) {
@@ -31,10 +32,13 @@ $res = $conn->query($sql) or die("erro");
       $html .=  "<td>".$row->depto."</td>";
       $html .=  "<td>".$row->funcao."</td>";
       $html .=  "<td>".$row->salario."</td>";
+      //WARNING: Requires php-gd to work properly and nice with png type images, otherwise it fails rendering
+      $html .=  '<td><img src="data:image/gif;base64,' . $row->foto . '" width="80px"/></td>';
       $html .=  "</tr>";
     }
     //fechando a tabela
     $html .=  "</table>";
+    
     //intanciando a classe Dompdf para uso
     $dompdf = new Dompdf();
     //carregando $html para ser renderizado em pdf
