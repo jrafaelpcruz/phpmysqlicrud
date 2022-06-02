@@ -30,6 +30,7 @@
       print "</tr>";
     }
     print "</table>";
+    print "<div><a href='relatorio.php'>Gerar Relatório:</a></div>";
   } else {
     print "<h2>Vazio, não é o que você esperava né?</h2>";
   }

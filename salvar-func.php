@@ -1,7 +1,6 @@
 <?php 
   switch (@$_REQUEST["acao"]) {
     case 'cadastrar':
-      $codfun = $_POST['codfun'];
       $nome = $_POST['nome'];
       $depto = $_POST['depto'];
       $funcao = $_POST['funcao'];
@@ -13,7 +12,6 @@
       echo "<br><h2>Incluido com sucesso.</h2>";
       break;
     case 'editar':
-      $codfun = $_POST['codfun'];
       $nome = $_POST['nome'];
       $depto = $_POST['depto'];
       $funcao = $_POST['funcao'];
