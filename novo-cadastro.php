@@ -12,12 +12,20 @@
     <input type="text" name="depto" class="form-control"/>
   </div>
   <div class="mb-3">
-    <label>Função</label>
-    <input type="text" name="funcao" class="form-control"/>
-  </div>
-  <div class="mb-3">
-    <label>Salário</label>
-    <input type="number" name="salario" class="form-control"/>
+    <label>Cargo</label>
+    <select name="funcao">
+      <?php
+        //let's do a loop to call options direct from the table cargos
+        //making the connection and selecting stuff from cargos
+        include "config.php";
+        $sql = "SELECT * FROM cargos";
+        $res = $conn->query($sql) or die("erro");
+        while($row = $res->fetch_object()) {          
+          print "<option value='{$row->codC}'>{$row->cargo}</option>";
+          
+        }        
+      ?>
+    </select>
   </div>
   <div class="mb-3">
     <label>Foto</label>
