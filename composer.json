@@ -2,8 +2,8 @@
     "name": "jrafaelpcruz/phpcrud2",
     "type": "project",
     "license": "MIT",
-    "minimum-stability": "stable",
     "require": {
-        "dompdf/dompdf": "v1.2.2"
+        "dompdf/dompdf": "v1.2.2",
+        "symfony/polyfill-mbstring": "^1.26"
     }
 }
