@@ -7,3 +7,4 @@ CHANGES\
 4- Added support to pdf report using dompdf 1.2.2 (https://github.com/dompdf/dompdf) \
 5- Suport for a picture added to the database and report \
 6- The database was split into codfun and cargos. Support for selecting the funcionário cargo and pulling associated info from cargos added.
+
