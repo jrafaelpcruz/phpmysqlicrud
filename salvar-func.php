@@ -119,5 +119,23 @@
       echo "<br><h2>Incluido com sucesso.</h2>";
       break;
     
+    case 'excluir-cargo':
+      print "<h1>Cargos</h1>";
+      $sql = "SELECT nome from codfun WHERE codC=".$_REQUEST['codC'];
+      $res = $conn->query($sql) or die("erro");
+      $qtd = $res->num_rows;
+      if ($qtd === 0) {
+        $sql = "DELETE FROM cargos WHERE codC=".$_REQUEST['codC'];
+        $res = $conn->query($sql) or die("erro");
+        print "<h2>Excluido com sucesso.</h2>";
+      } else {
+        print "<h3>Impossivel deletar pois esse cargo tem os seguintes funcionários atrelados:</h3>";
+        print "<ul>";
+          while($row = $res->fetch_object()) {
+            print "<li>".$row->nome."</li>";
+          }
+        print "</ul>";
+      }
+      break;
   }
 ?>

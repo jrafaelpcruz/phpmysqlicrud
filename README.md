@@ -13,6 +13,9 @@ HISTORY OF CHANGES\
 - The database was split into codfun and cargos. Support for selecting the funcionário cargo and pulling associated info from cargos added.
 - Some changes made to relatorio, config and funcionality to view, edit and delete jobs added.
 - Refinements to novo-cadastro.php and gerencia-cargos.php. Can't populate codfun without any cargo on cargos table.
+- Some checks added about the database and data inside it.
+- Possibility to delete cargo from cargos now, related warnings.
+- Some explanation and a new default page added (adding to the "Bem vindo(a)." from Inicio. 
 \
 Consider supporting: \
 symfony \

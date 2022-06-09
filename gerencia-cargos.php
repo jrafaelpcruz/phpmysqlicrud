@@ -18,7 +18,11 @@
         print "<td>".$row->cargo."</td>";
         print "<td>R$ ".$row->salario."</td>";
         print "<td>
+
                 <button onclick=\"location.href='?page=editar-cargo&codC=".$row->codC."';\" class='btn btn-success'>Editar</button>
+
+                <button onclick=\"if(confirm('Tem certeza que deseja excluir?')){location.href='?page=salvar&acao=excluir-cargo&codC=".$row->codC."';}else{false;}\" class='btn btn-danger'>Excluir</button>
+
               </td>";
       print "</tr>";
     }

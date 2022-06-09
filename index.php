@@ -59,8 +59,11 @@
             case "novo-cargo":
               include("novo-cargo.php");
               break;
+            case "tabelas":
+              include("tabelas.php");
+              break;
             default:
-              echo "<h2>Bem vindo(a).</h2>";
+              include ("default.php");
             break;
           }
     ?> 

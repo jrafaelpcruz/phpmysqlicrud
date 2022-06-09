@@ -45,6 +45,6 @@
     }
     print "</table>";
   } else {
-    print "<h2>Vazio, não é o que você esperava né?</h2>";
+    print "<h2>Não há cadastros.</h2>";
   }
 ?>
