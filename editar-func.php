@@ -1,6 +1,5 @@
-<h1>Editar Funcionário</h1>
-
 <?php
+  print "<h1>Editar Funcionário</h1>";
   $sql = "SELECT * FROM codfun WHERE codfun=".$_REQUEST["codfun"];
   $res = $conn->query($sql) or die("erro");
   $row = $res->fetch_object();

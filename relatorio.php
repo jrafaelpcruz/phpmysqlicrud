@@ -4,6 +4,8 @@
 include_once ("config.php");
 //inluindo o autoloader do composer para o dompdf
 require 'vendor/autoload.php';
+//criando a variavel html para evitar alguns erros de renderizaçao
+$html='';
 //informando o uso do dompdf
 use Dompdf\Dompdf;
 //montando o banco a ser visualizado e renderizado em pdf
