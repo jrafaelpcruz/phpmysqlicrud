@@ -4,7 +4,8 @@ PHP Version: v8.1.2 \
 Need composer for downloading packages and \
 "composer update"
 \
-HISTORY OF CHANGES\
+\
+HISTORY OF CHANGES
 
 - First commit with the project done, also using bootstrap for front end (https://getbootstrap.com/)
 - Changed the primary key from the database to be auto_increment
