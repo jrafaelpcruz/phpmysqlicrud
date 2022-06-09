@@ -1,5 +1,5 @@
-<h1>Funcionários</h1>
 <?php
+  print "<h1>Funcionário</h1>";
   $sql = "SELECT * FROM codfun";
   $res = $conn->query($sql) or die("erro");
   $qtd = $res->num_rows;
@@ -44,7 +44,6 @@
       print "</tr>";
     }
     print "</table>";
-    print "<div><a href='relatorio.php'>Gerar Relatório</a></div>";
   } else {
     print "<h2>Vazio, não é o que você esperava né?</h2>";
   }

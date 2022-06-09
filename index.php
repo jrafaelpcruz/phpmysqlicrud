@@ -22,6 +22,12 @@
           <li class="nav-item">
             <a class="nav-link" href="?page=novo">Cadastrar</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="?page=cargos">Cargos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="relatorio.php">Relatórios</a>
+          </li>
         </ul>        
       </div>
     </div>
@@ -40,9 +46,19 @@
               break;
             case "salvar":
               include("salvar-func.php");
-            break;
+              break;
             case "editar":
               include("editar-func.php");
+              break;
+            case "cargos":
+              include("gerencia-cargos.php");
+              break;
+            case "editar-cargo":
+              include("editar-cargo.php");
+              break;
+            case "novo-cargo":
+              include("novo-cargo.php");
+              break;
             default:
               echo "<h2>Bem vindo(a).</h2>";
             break;

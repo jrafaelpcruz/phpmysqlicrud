@@ -44,6 +44,7 @@
       $res = $conn->query($sql) or die("erro");
       echo "<br><h2>Incluido com sucesso.</h2>";
       break;
+      
     case 'editar':
       $nome = $_POST['nome'];
       $depto = $_POST['depto'];
@@ -95,10 +96,28 @@
       $res = $conn->query($sql) or die("beneath the ice");
       echo "<br><h2>Editado com sucesso.</h2>";
       break;
+
     case 'excluir':
       $sql = "DELETE FROM codfun WHERE codfun=".$_REQUEST["codfun"];
       $res = $conn->query($sql) or die("erro");
       echo "<br><h2>Excluido.</h2>";
       break;
+
+    case 'editar-cargo':
+      $cargo = $_POST['cargo'];
+      $salario = $_POST['salario'];
+      $sql = "UPDATE cargos SET cargo='{$cargo}', salario={$salario} WHERE codC=".$_REQUEST['codC'];
+      $res = $conn->query($sql) or die("erro");
+      echo "<br><h2>Editado com sucesso.</h2>";
+      break;
+
+    case 'salvar-cargo':
+      $cargo = $_POST['cargo'];
+      $salario = $_POST['salario'];
+      $sql = "INSERT INTO cargos (codC, cargo, salario) VALUES(null,'{$cargo}',{$salario});";
+      $res = $conn->query($sql) or die("erro");
+      echo "<br><h2>Incluido com sucesso.</h2>";
+      break;
+    
   }
 ?>
