@@ -4,8 +4,9 @@ PHP Version: v8.1.2 \
 Need composer for downloading packages and \
 "composer update"
 \
-HISTORY OF CHANGES\
 \
+HISTORY OF CHANGES
+
 - First commit with the project done, also using bootstrap for front end (https://getbootstrap.com/)
 - Changed the primary key from the database to be auto_increment
 - Added support to pdf report using dompdf 1.2.2 (https://github.com/dompdf/dompdf)
@@ -16,6 +17,7 @@ HISTORY OF CHANGES\
 - Some checks added about the database and data inside it.
 - Possibility to delete cargo from cargos now, related warnings.
 - Some explanation and a new default page added (adding to the "Bem vindo(a)." from Inicio. 
+\
 \
 Consider supporting: \
 symfony \
