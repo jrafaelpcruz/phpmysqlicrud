@@ -22,7 +22,8 @@
               </td>";
       print "</tr>";
     }
-    print "</table>";
-    print "<button onclick=\"location.href='?page=novo-cargo'\">Novo Cargo</button>";  
+    print "</table>"; 
   }
+  
+  print "<button onclick=\"location.href='?page=novo-cargo'\">Novo Cargo</button>";
 ?>
