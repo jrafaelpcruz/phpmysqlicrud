@@ -26,7 +26,7 @@
             <a class="nav-link" href="?page=cargos">Cargos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="relatorio.php">Relatórios</a>
+            <a class="nav-link" href="?page=relatorios">Relatórios</a>
           </li>
         </ul>        
       </div>
@@ -58,6 +58,9 @@
               break;
             case "novo-cargo":
               include("novo-cargo.php");
+              break;
+            case "relatorios":
+              include ("relatorios.php");
               break;
             case "tabelas":
               include("tabelas.php");
