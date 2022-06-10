@@ -16,7 +16,8 @@ HISTORY OF CHANGES
 - Refinements to novo-cadastro.php and gerencia-cargos.php. Can't populate codfun without any cargo on cargos table.
 - Some checks added about the database and data inside it.
 - Possibility to delete cargo from cargos now, related warnings.
-- Some explanation and a new default page added (adding to the "Bem vindo(a)." from Inicio. 
+- Some explanation and a new default page added (adding to the "Bem vindo(a)." from Inicio.
+- Now there are three diferent reports available under "relatorios": "Funcionarios", "Cargos" and "Custos"
 \
 \
 Consider supporting: \
@@ -26,4 +27,3 @@ symfony \
     https://github.com/sponsors/fabpot \
     https://tidelift.com/funding/github/packagist/symfony/symfony \
     https://github.com/dompdf/dompdf
-
