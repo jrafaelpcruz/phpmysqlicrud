@@ -18,6 +18,7 @@ HISTORY OF CHANGES
 - Possibility to delete cargo from cargos now, related warnings.
 - Some explanation and a new default page added (adding to the "Bem vindo(a)." from Inicio.
 - Now there are three diferent reports available under "relatorios": "Funcionarios", "Cargos" and "Custos"
+- Some bug squashing and updates do mysql query
 \
 \
 Consider supporting: \
