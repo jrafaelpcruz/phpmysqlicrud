@@ -10,7 +10,7 @@ $html='';
 use Dompdf\Dompdf;
 //montando o banco a ser visualizado e renderizado em pdf
 //requisiçao no mysql
-$sql = "SELECT * FROM codfun";
+$sql = "SELECT * FROM codfun INNER JOIN cargos WHERE codfun.codC = cargos.codC ORDER BY codfun.codfun;";
 //resultado com a requisicao e a conexão
 $res = $conn->query($sql) or die("erro");
 //vamos concatenar uma tag estilo e titulo para uso:
@@ -56,18 +56,8 @@ while($row = $res->fetch_object()) {
   $html .=  "<td>".$row->codfun."</td>";
   $html .=  "<td>".$row->nome."</td>";
   $html .=  "<td>".$row->depto."</td>";
-  $html .=  "<td>";
-    $sql2 = "SELECT cargo FROM cargos WHERE codC=$row->codC";
-    $res2 = $conn->query($sql2) or die("erro");
-    $row2 = $res2->fetch_object();
-    $html .= $row2->cargo;
-  $html .=  "</td>";
-  $html .=  "<td>";
-    $sql2 = "SELECT salario FROM cargos WHERE codC=$row->codC";
-    $res2 = $conn->query($sql2) or die("erro");
-    $row2 = $res2->fetch_object();
-    $html .= "R$ ".$row2->salario;
-  $html .= "</td>";
+  $html .=  "<td>".$row->cargo."</td>";
+  $html .=  "<td>".$row->salario."</td>";
   //WARNING: Requires php-gd to work properly and nice with png type images, otherwise it fails rendering
   $html .=  '<td><img src="data:image/gif;base64,' . $row->foto . '" width="80px"/></td>';
   $html .=  "</tr>";

@@ -23,13 +23,12 @@
       <?php
         //single non repeat option for listing same option originaly held        
         $sql2 = "SELECT * FROM cargos WHERE codC =".$row->codC;
-        $res2 = $conn->query($sql2) or die("erro");
+        $res2 = $conn->query($sql2);
         $row2 = $res2->fetch_object();
         print "<option value='$row2->codC'>$row2->cargo</option>";
         //let's do a loop to call options direct from the table cargos. Note the condition on the query WHERE codC !=".$row->cod, that alone solved the duplicate entry bug.
         $sql3 = "SELECT * FROM cargos WHERE codC !=".$row->codC;
-        $res3 = $conn->query($sql3) or die("erro");
-        $row3 = $res3->fetch_object();
+        $res3 = $conn->query($sql3);
         while($row3 = $res3->fetch_object()) {          
           print "<option value='{$row3->codC}'>{$row3->cargo}</option>";
         }        
@@ -48,6 +47,6 @@
     <label>Deixe em branco para manter a atual.</label>
   </div>
   <div class="mb-3">
-    <button type="submit" class="btn-primary">Enviar</button>
+    <button type="submit">Enviar</button>
   </div>
 </form>

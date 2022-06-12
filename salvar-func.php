@@ -28,14 +28,17 @@
   
             } else {
               echo "Arquivo muito grande.";
+              print "<a href='?page=novo'>Retornar</a>";
               break;
             }
           } else {
             echo "Erro com o upload.";
+            print "<a href='?page=novo'>Retornar</a>";
             break;
           } 
         } else {
           echo "Não suportado. Use imagens do tipo jpg, jpeg ou png.";
+          print "<a href='?page=novo'>Retornar</a>";
           break;
         }
 
@@ -43,6 +46,7 @@
 
       $res = $conn->query($sql) or die("erro");
       echo "<br><h2>Incluido com sucesso.</h2>";
+      print "<a href='?page=listar'>Visualizar</a>";
       break;
       
     case 'editar':
@@ -68,14 +72,17 @@
                   $image = base64_encode($image);
                   } else {
                     echo "Arquivo muito grande.";
+                    print "<a href='?page=listar'>Retornar</a>";
                     break;
                     }
               } else {
                 echo "Erro com o upload.";
+                print "<a href='?page=listar'>Retornar</a>";
                 break;
               } 
             } else {
               echo "Não suportado. Use imagens do tipo jpg, jpeg ou png.";
+              print "<a href='?page=listar'>Retornar</a>";
               break;
             }
             $sql = "UPDATE codfun SET 
@@ -93,14 +100,16 @@
               WHERE
                 codfun=".$_REQUEST['codfun'];                  
           }
-      $res = $conn->query($sql) or die("beneath the ice");
-      echo "<br><h2>Editado com sucesso.</h2>";
+      $res = $conn->query($sql);
+      print "<h2>Editado com sucesso.</h2>";
+      print "<a href='?page=listar'>Visualizar</a>";
       break;
 
     case 'excluir':
       $sql = "DELETE FROM codfun WHERE codfun=".$_REQUEST["codfun"];
       $res = $conn->query($sql) or die("erro");
       echo "<br><h2>Excluido.</h2>";
+      print "<a href='?page=listar'>Visualizar</a>";
       break;
 
     case 'editar-cargo':
@@ -109,6 +118,7 @@
       $sql = "UPDATE cargos SET cargo='{$cargo}', salario={$salario} WHERE codC=".$_REQUEST['codC'];
       $res = $conn->query($sql) or die("erro");
       echo "<br><h2>Editado com sucesso.</h2>";
+      print "<a href='?page=cargos'>Visualizar</a>";
       break;
 
     case 'salvar-cargo':
@@ -117,6 +127,7 @@
       $sql = "INSERT INTO cargos (codC, cargo, salario) VALUES(null,'{$cargo}',{$salario});";
       $res = $conn->query($sql) or die("erro");
       echo "<br><h2>Incluido com sucesso.</h2>";
+      print "<a href='?page=cargos'>Visualizar</a>";
       break;
     
     case 'excluir-cargo':
@@ -128,6 +139,7 @@
         $sql = "DELETE FROM cargos WHERE codC=".$_REQUEST['codC'];
         $res = $conn->query($sql) or die("erro");
         print "<h2>Excluido com sucesso.</h2>";
+        print "<a href='?page=cargos'>Visualizar</a>";
       } else {
         print "<h3>Impossivel deletar pois esse cargo tem os seguintes funcionários atrelados:</h3>";
         print "<ul>";
@@ -135,6 +147,7 @@
             print "<li>".$row->nome."</li>";
           }
         print "</ul>";
+        print "<a href='?page=cargos'>Retornar</a>";
       }
       break;
   }

@@ -1,6 +1,6 @@
 <?php
   print "<h1>Funcionário</h1>";
-  $sql = "SELECT * FROM codfun";
+  $sql = "SELECT * FROM codfun INNER JOIN cargos WHERE codfun.codC = cargos.codC ORDER BY codfun.codfun;";
   $res = $conn->query($sql) or die("erro");
   $qtd = $res->num_rows;
 
@@ -20,18 +20,8 @@
         print "<td>".$row->codfun."</td>";
         print "<td>".$row->nome."</td>";
         print "<td>".$row->depto."</td>";
-        print "<td>";
-          $sql2 = "SELECT cargo FROM cargos WHERE codC=$row->codC";
-          $res2 = $conn->query($sql2) or die("erro");
-          $row2 = $res2->fetch_object();
-          print $row2->cargo;
-        print "</td>";
-        print "<td>";
-          $sql2 = "SELECT salario FROM cargos WHERE codC=$row->codC";
-          $res2 = $conn->query($sql2) or die("erro");
-          $row2 = $res2->fetch_object();
-          print "R$ ".$row2->salario;
-        print "</td>";
+        print "<td>".$row->cargo."</td>";
+        print "<td>R$ ".$row->salario."</td>";
         /*pulling the image from database for visualization and decoding the base64 string
         some argue it's best to serve the file from the server instead of the database for less overhead on the server. But also say having the image on the database is best for keeping it organized*/
         print '<td><img src="data:image/gif;base64,' . $row->foto . '" width="80px"/></td>';
