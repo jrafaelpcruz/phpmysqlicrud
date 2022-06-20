@@ -76,4 +76,3 @@ $dompdf->render();
 //'jogando' o pdf para o navegador
 $dompdf->stream();
 ?>
-
